@@ -5,9 +5,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -21,7 +18,7 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " ...
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+" call vundle#end()            " required on linux
 filetype plugin indent on    " required
 
 au BufNewFile,BufRead *.py
@@ -29,6 +26,7 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
+    \ set colorcolumn=80 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
@@ -38,7 +36,7 @@ au BufNewFile,BufRead *.js, *.html, *.css, *.php
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
-"Flagging Unnecessary Whitespace
+" Flagging Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -54,4 +52,8 @@ else
   colorscheme zenburn
 endif
 
+" Standard Settings
 set nu
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
