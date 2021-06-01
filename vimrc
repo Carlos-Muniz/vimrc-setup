@@ -47,7 +47,7 @@ syntax on
 
 if has('gui_running')
   set background=dark
-  colorscheme solarized
+  colorscheme default
 else
   colorscheme zenburn
 endif
