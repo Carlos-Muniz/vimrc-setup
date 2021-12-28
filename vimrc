@@ -12,8 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " ...
 
@@ -45,12 +43,8 @@ set encoding=utf-8
 let python_highlight_all=1
 syntax on
 
-if has('gui_running')
-  set background=dark
-  colorscheme default
-else
-  colorscheme zenburn
-endif
+set t_Co=256  " make use of 256 terminal colors
+color summerfruit256
 
 " Standard Settings
 set nu
@@ -58,3 +52,4 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set backspace=2
+
