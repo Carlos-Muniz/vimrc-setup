@@ -13,18 +13,20 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'psf/black'
 " ...
 
 " All of your Plugins must be added before the following line
-" call vundle#end()            " required on linux
+call vundle#end()            " required on linux
 filetype plugin indent on    " required
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set colorcolumn=80 |
+    \ set textwidth=88 |
+    \ set colorcolumn=89 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
@@ -52,4 +54,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set backspace=2
+
+" Runs Black on save
+autocmd BufWritePre *.py execute ':Black'
 
